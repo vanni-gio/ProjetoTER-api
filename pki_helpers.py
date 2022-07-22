@@ -120,7 +120,7 @@ def sign_csr(csr, ca_public_key, ca_private_key, new_filename):
 
     public_key = builder.sign(
         private_key=ca_private_key,
-        algorithm=hashes.MD5(),
+        algorithm=hashes.SHA256(),
         backend=default_backend(),
     )
 

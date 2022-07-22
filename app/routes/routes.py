@@ -14,6 +14,9 @@ def certificado(current_sensor):
         return jsonify({'msg': 'autenticado', 'certificado': response.json()['certificado']}), 200
     return jsonify({'msg': 'credenciais invalidas','certificado': None}), 400
 
+@app.route('/')
+def home():
+    return jsonify({'msg': 'TESTE'}),200
 
 @app.route('/token', methods=['POST'])
 def token():
