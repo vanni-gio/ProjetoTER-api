@@ -25,7 +25,7 @@ def token():
     if not auth or not auth.get('nome') or not auth.get('senha'):
         return make_response('Could not verify!', 401, {'WWW-Authenticate': 'Basic-realm= "Login required!"'})
     # User.query.filter_by(username=auth['username']).first()
-    response = post('http://192.168.100.240:5001/sensor', json={'nome': auth.get('nome')}) # Buscar sensor no banco de dados e retornar id e senha
+    response = post('http://127.0.0.1:5001/sensor', json={'nome': auth.get('nome')}) # Buscar sensor no banco de dados e retornar id e senha
     
     if response.status_code != 200:
         return make_response('Could not verify sensor', response.status_code, {'WWW-Authenticate': 'Basic-realm= "No user found!"'})
