@@ -1,5 +1,3 @@
-
-
 # Authentication decorator
 from functools import wraps
 from app import app
